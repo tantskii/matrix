@@ -10,7 +10,7 @@ include:
   env:
     - MATRIX_EVAL="CC=gcc-7 && CXX=g++-7"
 language: cpp
-compiler: clang
+compiler: gcc
 git:
 - submodules: false
 before_install:
