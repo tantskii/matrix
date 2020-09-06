@@ -33,9 +33,9 @@ private:
 
 template <typename T, T Default, size_t N>
 void Matrix<T, Default, N>::update(Indexes&& indexes, T&& elem) {
-    auto key = m_data.makeKey(indexes);
-    bool is_default = elem == Default;
-    bool exists     = m_data.contains(key);
+    const auto key = m_data.makeKey(indexes);
+    const bool is_default = elem == Default;
+    const bool exists     = m_data.contains(key);
 
     // 1. если пришло    значение по умолчанию и элемент с такими индексами    существует
     if (is_default &&  exists) {
