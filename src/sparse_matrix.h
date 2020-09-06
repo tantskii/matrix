@@ -58,15 +58,18 @@ void Matrix<T, Default, N>::update(Indexes&& indexes, T&& elem) {
 
 template <typename T, T Default, size_t N>
 T Matrix<T, Default, N>::get(Indexes&& indexes) const {
-    auto key  = m_data.makeKey(indexes);
-
-    // 1. элемент с такими индексами существует
-    if (auto elem = m_data.find(key)) {
-        return *elem;
-    }
-    // 2. элемент с такими индексами не существует
-    else {
-        return Default;
+    const auto key  = m_data.makeKey(indexes);
+    const auto [status, elem] = m_data.find(key);
+    
+    switch (status) {
+        case Data<T, N>::FindStatus::NOT_FOUND:
+            // 1. элемент с такими индексами существует
+            return Default;
+            break;
+        case Data<T, N>::FindStatus::FOUND:
+            // 2. элемент с такими индексами не существует
+            return elem;
+            break;
     }
 }
 

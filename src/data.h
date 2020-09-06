@@ -4,7 +4,6 @@
 
 #include <list>
 #include <map>
-#include <optional>
 
 
 using Indexes = std::vector<size_t>;
@@ -13,6 +12,8 @@ using Indexes = std::vector<size_t>;
 template <typename T, size_t N>
 class Data {
 public:
+    enum class FindStatus {FOUND, NOT_FOUND};
+    
     using Key      = decltype(key_type (std::make_index_sequence<N>{}));
     using Element  = decltype(elem_type(std::make_index_sequence<N>{}, T{}));
     using It       = typename std::list<Element>::iterator;
@@ -21,7 +22,7 @@ public:
     void erase(const Key& key);
     void insert(const Key& key, const T& elem);
     bool contains(const Key& key) const;
-    std::optional<T> find(const Key& key) const;
+    std::pair<FindStatus, T> find(const Key& key) const;
     
     size_t size() const;
     It begin();
@@ -58,12 +59,12 @@ bool Data<T, N>::contains(const Key& key) const {
 
 
 template <typename T, size_t N>
-std::optional<T> Data<T, N>::find(const Key& key) const {
+std::pair<typename Data<T, N>::FindStatus, T> Data<T, N>::find(const Key& key) const {
     auto it = m_map.find(key);
     if (it == m_map.end()) {
-        return std::nullopt;
+        return {FindStatus::NOT_FOUND, T{}};
     }
-    return std::get<N>(*(it->second));
+    return {FindStatus::FOUND, std::get<N>(*(it->second))};
 }
 
 

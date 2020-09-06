@@ -34,9 +34,10 @@ TEST(Data, Insert) {
     
     auto key  = data.makeKey(indexes);
     data.insert(key, value);
+    const auto [status, value_1] = data.find(key);
     
     ASSERT_TRUE(data.contains(key));
-    ASSERT_EQ(data.find(key), value);
+    ASSERT_EQ(value_1, value);
 }
 
 
@@ -63,7 +64,7 @@ TEST(Data, Erase) {
     auto key  = data.makeKey(indexes);
     data.insert(key, value);
     data.erase(key);
-    std::optional<int> value_2 = data.find(key);
+    const auto [status, value_2] = data.find(key);
     
     ASSERT_FALSE(data.contains(key));
     ASSERT_FALSE(value_2);
@@ -79,10 +80,11 @@ TEST(Data, Find) {
     auto key_1 = data.makeKey(indexes_1);
     auto key_2 = data.makeKey(indexes_2);
     data.insert(key_1, value);
-    auto value_1 = data.find(key_1);
-    auto value_2 = data.find(key_2);
+    const auto [status_1, value_1] = data.find(key_1);
+    const auto [status_2, value_2] = data.find(key_2);
     
-    ASSERT_TRUE (value_1);
-    ASSERT_FALSE(value_2);
+//    ASSERT_TRUE (value_1);
+//    ASSERT_FALSE(value_2);
     ASSERT_EQ(value_1, value);
+    ASSERT_EQ(value_2, 0);
 }
