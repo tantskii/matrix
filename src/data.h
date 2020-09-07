@@ -1,3 +1,9 @@
+/*!
+\file
+\brief Заголовочный файл с описанием и реализацией класса,
+ осуществляющего хранение данных разреженной матрицы
+*/
+
 #pragma once
 
 #include "data_helpers.h"
@@ -9,10 +15,10 @@
 using Indexes = std::vector<size_t>;
 
 /*!
-    @brief Класс, который отвечает за хранение данных разреженной матрицы
-    @details
-    @tparam T тип хранимых данных
-    @tparam N n-мерность матрицы
+@brief Класс, который отвечает за хранение данных
+@details
+@tparam T тип хранимых данных
+@tparam N n-мерность матрицы
 */
 template <typename T, size_t N>
 class Data {
