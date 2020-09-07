@@ -15,8 +15,10 @@ using Indexes = std::vector<size_t>;
 
 template <typename T, T Default, size_t N>
 class Matrix : public IProxy<T> {
+private:
+    Data<T, N> m_data;
 public:
-    using Iterator = typename Data<T, N>::It;
+    using Iterator = decltype(m_data.begin());//typename Data<T, N>::It;
     
     Proxy<T> operator[](std::size_t);
     
@@ -26,8 +28,6 @@ public:
     Iterator begin();
     Iterator end();
     size_t size() const;
-private:
-    Data<T, N> m_data;
 };
 
 

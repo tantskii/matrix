@@ -41,6 +41,23 @@ TEST(Data, Insert) {
 }
 
 
+TEST(Data, InsertTwice) {
+    Data<int, 2> data;
+    const Indexes indexes = {100, 100};
+    const int value_1 = 314;
+    const int value_2 = 215;
+    
+    auto key  = data.makeKey(indexes);
+    data.insert(key, value_1);
+    data.insert(key, value_2);
+    
+    const auto [status, value_3] = data.find(key);
+    
+    ASSERT_TRUE(data.contains(key));
+    ASSERT_EQ(value_3, value_2);
+}
+
+
 TEST(Data, Contains) {
     Data<int, 2> data;
     Indexes indexes_1 = {100, 100};
@@ -71,6 +88,16 @@ TEST(Data, Erase) {
 }
 
 
+TEST(Data, EraseUninsertedElement) {
+    Data<int, 2> data;
+    Indexes indexes = {100, 100};
+    
+    auto key  = data.makeKey(indexes);
+    
+    ASSERT_THROW(data.erase(key), std::runtime_error);
+}
+
+
 TEST(Data, Find) {
     Data<int, 2> data;
     Indexes indexes_1 = {100, 100};
@@ -82,9 +109,7 @@ TEST(Data, Find) {
     data.insert(key_1, value);
     const auto [status_1, value_1] = data.find(key_1);
     const auto [status_2, value_2] = data.find(key_2);
-    
-//    ASSERT_TRUE (value_1);
-//    ASSERT_FALSE(value_2);
+
     ASSERT_EQ(value_1, value);
     ASSERT_EQ(value_2, 0);
 }
