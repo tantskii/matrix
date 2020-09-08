@@ -1,6 +1,6 @@
 /*!
-\file
-\brief Заголовочный файл с описанием и реализацией класса,
+@file
+@brief Заголовочный файл с описанием и реализацией класса,
  осуществляющего хранение данных разреженной матрицы
 */
 
@@ -161,6 +161,7 @@ typename Data<T, N>::Element Data<T, N>::makeElement(const Key& key, const T& el
     return makeElemImpl(key, std::make_index_sequence<N>{}, elem);
 }
 
+
 /*!
 Возвращает количество хранимых элементов
 @return количество хранимых элементов
@@ -170,6 +171,7 @@ size_t Data<T, N>::size() const {
     return m_data.size();
 }
 
+
 /*!
 Возвращает итератор на начало диапазона
 @return итератор на начало диапазона
@@ -178,6 +180,7 @@ template <typename T, size_t N>
 typename Data<T, N>::It Data<T, N>::begin() {
     return m_data.begin();
 }
+
 
 /*!
 Возвращает итератор на конец диапазона
