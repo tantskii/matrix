@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">matrix
-   &#160;<span id="projectnumber">0.0.13</span>
+   &#160;<span id="projectnumber">0.0.14</span>
    </div>
   </td>
  </tr>
@@ -91,6 +91,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
+<p>интерфейс проски класса  
+ <a href="class_i_proxy.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="proxy_8h_source.html">proxy.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for IProxy&lt; V &gt;:</div>
@@ -104,11 +107,24 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8172a21a8ebf55be554585424099a54b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_proxy.html#a8172a21a8ebf55be554585424099a54b">~IProxy</a> ()=default</td></tr>
 <tr class="separator:a8172a21a8ebf55be554585424099a54b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9392d5012fc948e050d0be8b5d82d6d4"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_proxy.html#a9392d5012fc948e050d0be8b5d82d6d4">update</a> (<a class="el" href="data_8h.html#a066e8bf32024eca32c97d175800ca978">Indexes</a> &amp;&amp;indexes, V &amp;&amp;elem)=0</td></tr>
+<tr class="memdesc:a9392d5012fc948e050d0be8b5d82d6d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Передает индексы и значение элемента  <a href="#a9392d5012fc948e050d0be8b5d82d6d4">More...</a><br /></td></tr>
 <tr class="separator:a9392d5012fc948e050d0be8b5d82d6d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa259819635dfa604f3ce4b929c6f39b6"><td class="memItemLeft" align="right" valign="top">virtual V&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_proxy.html#aa259819635dfa604f3ce4b929c6f39b6">get</a> (<a class="el" href="data_8h.html#a066e8bf32024eca32c97d175800ca978">Indexes</a> &amp;&amp;indexes) const =0</td></tr>
+<tr class="memdesc:aa259819635dfa604f3ce4b929c6f39b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Запрашивает значение элемента по индексам  <a href="#aa259819635dfa604f3ce4b929c6f39b6">More...</a><br /></td></tr>
 <tr class="separator:aa259819635dfa604f3ce4b929c6f39b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><h3>template&lt;typename V&gt;<br />
+class IProxy&lt; V &gt;</h3>
+
+<p>интерфейс проски класса </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">V</td><td>тип хранимого в матрице элемента </td></tr>
+  </table>
+  </dd>
+</dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a8172a21a8ebf55be554585424099a54b"></a>
 <div class="memitem">
 <div class="memproto">
@@ -159,6 +175,8 @@ template&lt;typename V&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Запрашивает значение элемента по индексам </p>
+
 <p>Implemented in <a class="el" href="class_proxy.html#a7b7233f175956ffd21d8af78aa1e0d86">Proxy&lt; V &gt;</a>, and <a class="el" href="class_matrix.html#ab5791fac1354a0343de19e9c8963bc68">Matrix&lt; T, Default, N &gt;</a>.</p>
 
 </div>
@@ -197,7 +215,9 @@ template&lt;typename V&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="class_proxy.html#ad83c5678ac338cd0066ca6bf33d14e95">Proxy&lt; V &gt;</a>, and <a class="el" href="class_matrix.html#ae6a6fd88eec9fd27645701c94db2d838">Matrix&lt; T, Default, N &gt;</a>.</p>
+<p>Передает индексы и значение элемента </p>
+
+<p>Implemented in <a class="el" href="class_proxy.html#ad83c5678ac338cd0066ca6bf33d14e95">Proxy&lt; V &gt;</a>, and <a class="el" href="class_matrix.html#a738e9962a123432a91f141064878382f">Matrix&lt; T, Default, N &gt;</a>.</p>
 
 </div>
 </div>
