@@ -32,6 +32,17 @@ TEST(MatrixTest, WriteElem) {
 }
 
 
+TEST(MatrixTest, RemoveElem) {
+    Matrix<int, -1, 2> matrix;
+    
+    matrix[100][100] = 314;
+    matrix[100][100] = -1;
+    
+    ASSERT_TRUE(matrix[100][100] == -1);
+    ASSERT_EQ(matrix.size(), 0);
+}
+
+
 TEST(MatrixTest, Iteration) {
     Matrix<int, -1, 2> matrix;
     std::ostringstream os;
@@ -52,6 +63,13 @@ TEST(MatrixTest, OperatorEq) {
     
     ASSERT_TRUE(matrix[100][100] == 217);
     ASSERT_EQ(matrix.size(), 1);
+}
+
+
+TEST(MatrixTest, IncorrectIndexes) {
+    Matrix<int, -1, 2> matrix;
+    
+    ASSERT_THROW(matrix[100][100][100] = 10, std::runtime_error);
 }
 
 

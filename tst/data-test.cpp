@@ -15,6 +15,14 @@ TEST(Data, MakeKey) {
 }
 
 
+TEST(Data, MakeIncorrectKey) {
+    Data<int, 2> data;
+    Indexes indexes = {100, 100, 100};
+    
+    ASSERT_THROW(data.makeKey(indexes), std::runtime_error);
+}
+
+
 TEST(Data, MakeElement) {
     Data<int, 2> data;
     Indexes indexes = {100, 100};

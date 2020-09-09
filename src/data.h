@@ -10,6 +10,7 @@
 
 #include <list>
 #include <map>
+#include <string>
 
 /// @brief сокращение для набора индексов
 using Indexes = std::vector<size_t>;
@@ -147,6 +148,12 @@ std::pair<typename Data<T, N>::FindStatus, T> Data<T, N>::find(const Key& key) c
 */
 template <typename T, size_t N>
 typename Data<T, N>::Key Data<T, N>::makeKey(const Indexes& indexes) const {
+    if (indexes.size() != N) {
+        std::string error_message = "Indexes size must be "  + \
+                                    std::to_string(N) + " not " + \
+                                    std::to_string(indexes.size());
+        throw std::runtime_error(error_message);
+    }
     return makeKeyImpl(indexes, std::make_index_sequence<N>{});
 }
 
