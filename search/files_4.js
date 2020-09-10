@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['sparse_5fmatrix_2eh',['sparse_matrix.h',['../sparse__matrix_8h.html',1,'']]]
+  ['proxy_2eh',['proxy.h',['../proxy_8h.html',1,'']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['proxy',['Proxy',['../class_proxy.html#a22b1236587ebf27f74f68f168c95ce34',1,'Proxy']]]
+  ['proxy',['Proxy',['../class_proxy.html#a8ac0c4d5913c4f55574e1894d0543651',1,'Proxy']]]
 ];
