@@ -66,10 +66,17 @@ TEST(MatrixTest, OperatorEq) {
 }
 
 
-TEST(MatrixTest, IncorrectIndexes) {
+TEST(MatrixTest, TooManyIndexes) {
     Matrix<int, -1, 2> matrix;
     
     ASSERT_THROW(matrix[100][100][100] = 10, std::runtime_error);
+}
+
+
+TEST(MatrixTest, FewIndexes) {
+    Matrix<int, -1, 2> matrix;
+    
+    ASSERT_THROW(matrix[100] = 10, std::runtime_error);
 }
 
 

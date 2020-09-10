@@ -6,12 +6,11 @@
 
 #pragma once
 
+#include "indexes.h"
 #include <vector>
 #include <tuple>
 #include <utility>
-
-/// @brief сокращение для набора индексов
-using Indexes = std::vector<size_t>;
+#include <array>
 
 
 /*!
@@ -34,8 +33,8 @@ auto elem_type(std::index_sequence<Is...>, T t) {
 /*!
 Вспомогательная функция для получения ключа
 */
-template<std::size_t... I>
-auto makeKeyImpl(const Indexes& v, std::index_sequence<I...>) {
+template<size_t N, std::size_t... I>
+auto makeKeyImpl(const Indexes<N>& v, std::index_sequence<I...>) {
     return std::make_tuple(v[I]...);
 }
 

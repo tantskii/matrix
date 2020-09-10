@@ -7,7 +7,7 @@
 
 TEST(Data, MakeKey) {
     Data<int, 2> data;
-    Indexes indexes = {100, 100};
+    Indexes<2> indexes = {100, 100};
     
     auto key = data.makeKey(indexes);
     
@@ -15,17 +15,17 @@ TEST(Data, MakeKey) {
 }
 
 
-TEST(Data, MakeIncorrectKey) {
-    Data<int, 2> data;
-    Indexes indexes = {100, 100, 100};
-    
-    ASSERT_THROW(data.makeKey(indexes), std::runtime_error);
-}
+//TEST(Data, MakeIncorrectKey) {
+//    Data<int, 2> data;
+//    Indexes<3> indexes = {100, 100, 100};
+//    
+//    ASSERT_THROW(data.makeKey(indexes), std::runtime_error);
+//}
 
 
 TEST(Data, MakeElement) {
     Data<int, 2> data;
-    Indexes indexes = {100, 100};
+    Indexes<2> indexes = {100, 100};
     int value = 314;
     
     auto key  = data.makeKey(indexes);
@@ -37,7 +37,7 @@ TEST(Data, MakeElement) {
 
 TEST(Data, Insert) {
     Data<int, 2> data;
-    Indexes indexes = {100, 100};
+    Indexes<2> indexes = {100, 100};
     int value = 314;
     
     auto key  = data.makeKey(indexes);
@@ -51,7 +51,7 @@ TEST(Data, Insert) {
 
 TEST(Data, InsertTwice) {
     Data<int, 2> data;
-    const Indexes indexes = {100, 100};
+    const Indexes<2> indexes = {100, 100};
     const int value_1 = 314;
     const int value_2 = 215;
     
@@ -68,8 +68,8 @@ TEST(Data, InsertTwice) {
 
 TEST(Data, Contains) {
     Data<int, 2> data;
-    Indexes indexes_1 = {100, 100};
-    Indexes indexes_2 = {120, 400};
+    Indexes<2> indexes_1 = {100, 100};
+    Indexes<2> indexes_2 = {120, 400};
     int value = 314;
     
     auto key_1  = data.makeKey(indexes_1);
@@ -83,7 +83,7 @@ TEST(Data, Contains) {
 
 TEST(Data, Erase) {
     Data<int, 2> data;
-    Indexes indexes = {100, 100};
+    Indexes<2> indexes = {100, 100};
     int value = 314;
     
     auto key  = data.makeKey(indexes);
@@ -98,7 +98,7 @@ TEST(Data, Erase) {
 
 TEST(Data, EraseUninsertedElement) {
     Data<int, 2> data;
-    Indexes indexes = {100, 100};
+    Indexes<2> indexes = {100, 100};
     
     auto key  = data.makeKey(indexes);
     
@@ -108,8 +108,8 @@ TEST(Data, EraseUninsertedElement) {
 
 TEST(Data, Find) {
     Data<int, 2> data;
-    Indexes indexes_1 = {100, 100};
-    Indexes indexes_2 = {120, 400};
+    Indexes<2> indexes_1 = {100, 100};
+    Indexes<2> indexes_2 = {120, 400};
     int value = 314;
     
     auto key_1 = data.makeKey(indexes_1);

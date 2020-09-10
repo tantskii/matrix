@@ -1,16 +1,16 @@
-#pragma once
+/*!
+@file
+@brief Заголовочный класс, содержащий определение и реализацию класса бесконечной разреженной матрицы
+*/
 
+#pragma once
 #include "proxy.h"
 #include "data.h"
-
 #include <map>
 #include <list>
 #include <tuple>
 #include <memory>
 #include <vector>
-
-/// @brief сокращение для набора индексов
-using Indexes = std::vector<size_t>;
 
 /*!
  @brief Целевой класс, реализующий бесконечную n-мерную разреженную матрицу
@@ -20,15 +20,15 @@ using Indexes = std::vector<size_t>;
  @tparam N размерность матрицы
  */
 template <typename T, T Default, size_t N>
-class Matrix : public IProxy<T> {
+class Matrix : public IProxy<T, N> {
 public:
     /// @brief сокращение итератора
     using Iterator = typename Data<T, N>::It;
     
-    Proxy<T> operator[](std::size_t);
+    Proxy<T, N> operator[](std::size_t);
     
-    void update(Indexes&& indexes, T&& value) override; ///< Записывает элемент в ячейку с переданными индексами
-    T get(Indexes&& indexes) const override;            ///< Считывает элемент из ячейки с переданными индексами
+    void update(Indexes<N>&& indexes, T&& value) override; ///< Записывает элемент в ячейку с переданными индексами
+    T get(Indexes<N>&& indexes) const override;            ///< Считывает элемент из ячейки с переданными индексами
     
     Iterator begin();
     Iterator end();
@@ -44,7 +44,7 @@ private:
  @param value Записываемое значение
  */
 template <typename T, T Default, size_t N>
-void Matrix<T, Default, N>::update(Indexes&& indexes, T&& value) {
+void Matrix<T, Default, N>::update(Indexes<N>&& indexes, T&& value) {
     /*
       1. Если пришло    значение по умолчанию и элемент с такими индексами    существует
       -- удаляем этот элемент
@@ -64,11 +64,12 @@ void Matrix<T, Default, N>::update(Indexes&& indexes, T&& value) {
         // п.1 Значение по умолчанию и элемент с такими индексами существует
         m_data.erase(key);
     } else if (!is_default) {
-        // п.3 & п.4 Пришло НЕ значение по умолчанию и элемент
+        // п.3 & п.4 Пришло НЕ значение по умолчанию
         m_data.insert(key, value); // Data<T, N>::insert удалит старое значение,
                                    // в случае, когда элемент по такому ключу уже существует
     }
 }
+
 
 /*!
 Считывет элемент в ячейку с переданными индексами
@@ -76,7 +77,7 @@ void Matrix<T, Default, N>::update(Indexes&& indexes, T&& value) {
 @return Хранимое значение
 */
 template <typename T, T Default, size_t N>
-T Matrix<T, Default, N>::get(Indexes&& indexes) const {
+T Matrix<T, Default, N>::get(Indexes<N>&& indexes) const {
     /*
      1. Если элемент с такими индексами    существует
      -- возвращаем его
@@ -113,12 +114,12 @@ size_t Matrix<T, Default, N>::size() const {
 @return Проксирующий класс
 */
 template <typename T, T Default, size_t N>
-Proxy<T> Matrix<T, Default, N>::operator[](std::size_t index) {
-    Proxy proxy = Proxy<T>{this};
+Proxy<T, N> Matrix<T, Default, N>::operator[](std::size_t index) {
+    Proxy proxy = Proxy<T, N>{this};
     proxy.addIndex(index);
-    proxy.reserveIndexes(N);
     return proxy;
 }
+
 
 /*!
 @return Итератор на начало диапазона элементов
@@ -127,6 +128,7 @@ template <typename T, T Default, size_t N>
 typename Matrix<T, Default, N>::Iterator Matrix<T, Default, N>::begin() {
     return m_data.begin();
 }
+
 
 /*!
 @return Итератор на конец диапазона элементов

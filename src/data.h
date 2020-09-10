@@ -12,9 +12,6 @@
 #include <map>
 #include <string>
 
-/// @brief сокращение для набора индексов
-using Indexes = std::vector<size_t>;
-
 /*!
 @brief Класс, который отвечает за хранение данных
 @details
@@ -49,7 +46,7 @@ public:
     size_t size() const;                                      ///< Возвращает количесвто хранимых элементов
     It begin();
     It end();
-    Key makeKey(const Indexes& indexes) const;                ///< Создает ключ
+    Key makeKey(const Indexes<N>& indexes) const;                ///< Создает ключ
     Element makeElement(const Key& key, const T& elem) const; ///< Создает элемент
 private:
     void erase(MapIt it);          ///< Удаление по переданному итератору
@@ -147,7 +144,7 @@ std::pair<typename Data<T, N>::FindStatus, T> Data<T, N>::find(const Key& key) c
 @return Ключ
 */
 template <typename T, size_t N>
-typename Data<T, N>::Key Data<T, N>::makeKey(const Indexes& indexes) const {
+typename Data<T, N>::Key Data<T, N>::makeKey(const Indexes<N>& indexes) const {
     if (indexes.size() != N) {
         std::string error_message = "Indexes size must be "  + \
                                     std::to_string(N) + " not " + \

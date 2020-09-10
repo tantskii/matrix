@@ -6,23 +6,25 @@
 
 #pragma once
 
+#include "indexes.h"
 #include <memory>
-#include <vector>
-
-/// @brief сокращение для набора индексов
-using Indexes = std::vector<size_t>;
+#include <string>
+#include <array>
+#include <stdexcept>
+#include <iostream>
 
 /*!
  @brief интерфейс проски класса
  @details
  @tparam V тип хранимого в матрице элемента
+ @tparam N размерность матрицы
  */
-template <typename V>
+template <typename V, size_t N>
 class IProxy {
 public:
     ~IProxy() = default;
-    virtual void update(Indexes&& indexes, V&& elem) = 0; ///< Передает индексы и значение элемента
-    virtual V get(Indexes&& indexes) const = 0;           ///< Запрашивает значение элемента по индексам
+    virtual void update(Indexes<N>&& indexes, V&& elem) = 0; ///< Передает индексы и значение элемента
+    virtual V get(Indexes<N>&& indexes) const = 0;           ///< Запрашивает значение элемента по индексам
 };
 
 
@@ -32,27 +34,27 @@ public:
  @details
  @tparam V тип хранимого в матрице элемента
  */
-template <typename V>
-class Proxy : public IProxy<V> {
+template <typename V, size_t N>
+class Proxy : public IProxy<V, N> {
 public:
-    Proxy(IProxy<V> * prevProxyPtr);
+    Proxy(IProxy<V, N> * prevProxyPtr);
     
-    Proxy<V>& operator=(V&& elem);
-    Proxy<V>& operator[](std::size_t index);
+    Proxy<V, N>& operator=(V&& elem);
+    Proxy<V, N>& operator[](std::size_t index);
     operator V();
     
-    void update(Indexes&& indexes, V&& elem) override; ///< Передает индексы и значение элемента в m_subjectPtr
-    V get(Indexes&& indexes) const override;           ///< Запрашивает значение элемента по индексам у m_subjectPtr
+    void update(Indexes<N>&& indexes, V&& elem) override; ///< Передает индексы и значение элемента в m_subjectPtr
+    V get(Indexes<N>&& indexes) const override;           ///< Запрашивает значение элемента по индексам у m_subjectPtr
     void addIndex(size_t index);                       ///< Добавляет индекс в m_indexes
-    void reserveIndexes(size_t index_count);           ///< Резеривирует память под нужное количество индексов
 private:
-    IProxy<V> * m_subjectPtr; ///<  Указатель на объект-создатель
-    Indexes m_indexes;        ///< Набор индексов
+    IProxy<V, N> * m_subjectPtr; ///<  Указатель на объект-создатель
+    Indexes<N> m_indexes;        ///< Набор индексов
+    size_t m_counter = 0;        ///< Счетчик переданных индексов
 };
 
 
-template <typename V>
-Proxy<V>::Proxy(IProxy<V> * subjectPtr) : m_subjectPtr{subjectPtr} {}
+template <typename V, size_t N>
+Proxy<V, N>::Proxy(IProxy<V, N> * subjectPtr) : m_subjectPtr{subjectPtr} {}
 
 
 /*!
@@ -60,8 +62,8 @@ Proxy<V>::Proxy(IProxy<V> * subjectPtr) : m_subjectPtr{subjectPtr} {}
  @param index Индекс
  @return Ссылку на себя
  */
-template <typename V>
-Proxy<V>& Proxy<V>::operator[](std::size_t index) {
+template <typename V, size_t N>
+Proxy<V, N>& Proxy<V, N>::operator[](std::size_t index) {
     addIndex(index);
     return *this;
 }
@@ -72,8 +74,8 @@ Proxy<V>& Proxy<V>::operator[](std::size_t index) {
  @param elem Элемент для записи в объект-создатель
  @return Ссылку на себя
  */
-template <typename V>
-Proxy<V>& Proxy<V>::operator=(V&& elem) {
+template <typename V, size_t N>
+Proxy<V, N>& Proxy<V, N>::operator=(V&& elem) {
     update(std::move(m_indexes), std::move(elem));
     return *this;
 }
@@ -83,9 +85,14 @@ Proxy<V>& Proxy<V>::operator=(V&& elem) {
  Обновляет объект-создатель
  @param indexes  Набор индексов
  @param elem Элемент
+ @throw std::runtime_error Если передано слишком мало индексов
  */
-template <typename V>
-void Proxy<V>::update(Indexes&& indexes, V&& elem) {
+template <typename V, size_t N>
+void Proxy<V, N>::update(Indexes<N>&& indexes, V&& elem) {
+    if (m_counter < N) {
+        std::string error_message = "Too few indexes";
+        throw std::runtime_error(error_message);
+    }
     m_subjectPtr->update(std::move(indexes), std::move(elem));
 }
 
@@ -94,8 +101,8 @@ void Proxy<V>::update(Indexes&& indexes, V&& elem) {
  @param indexes Набор индексов
  @return Элемент
  */
-template <typename V>
-V Proxy<V>::get(Indexes&& indexes) const {
+template <typename V, size_t N>
+V Proxy<V, N>::get(Indexes<N>&& indexes) const {
     return m_subjectPtr->get(std::move(indexes));
 }
 
@@ -104,8 +111,8 @@ V Proxy<V>::get(Indexes&& indexes) const {
  Инициирует чтение элемента из объекта-создателя
  @return Элемент
  */
-template <typename V>
-Proxy<V>::operator V() {
+template <typename V, size_t N>
+Proxy<V, N>::operator V() {
     return get(std::move(m_indexes));
 }
 
@@ -113,18 +120,14 @@ Proxy<V>::operator V() {
 /*!
  Добавляет  переданный индекс в набор индексов
  @param index Индекс
+ @throw std::runtime_error Если произошла попытка добавления лишнего индекса
  */
-template <typename V>
-void Proxy<V>::addIndex(size_t index) {
-    m_indexes.push_back(index);
-}
-
-
-/*!
- Резервирует память под набор индексов
- @param index_count размер набора индексов
- */
-template <typename V>
-void Proxy<V>::reserveIndexes(size_t index_count) {
-    m_indexes.reserve(index_count);
+template <typename V, size_t N>
+void Proxy<V, N>::addIndex(size_t index) {
+    if (m_counter >= N) {
+        std::string error_message = "Too many indexes";
+        throw std::runtime_error(error_message);
+    }
+    
+    m_indexes[m_counter++] = index;
 }
