@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">matrix
-   &#160;<span id="projectnumber">0.0.19</span>
+   &#160;<span id="projectnumber">0.0.20</span>
    </div>
   </td>
  </tr>
@@ -106,12 +106,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
 Открытые члены</h2></td></tr>
 <tr class="memitem:acb88066368b00522233d2bf8fb665490"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_proxy.html#acb88066368b00522233d2bf8fb665490">~IProxy</a> ()=default</td></tr>
 <tr class="separator:acb88066368b00522233d2bf8fb665490"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab5f8f73615edc28bdbbb5dd3ee7bc9ae"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_proxy.html#ab5f8f73615edc28bdbbb5dd3ee7bc9ae">update</a> (<a class="el" href="indexes_8h.html#a7ca26c4f1673b1ff9eb4429f1ab10b37">Indexes</a>&lt; N &gt; &amp;&amp;indexes, V &amp;&amp;elem)=0</td></tr>
-<tr class="memdesc:ab5f8f73615edc28bdbbb5dd3ee7bc9ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Передает индексы и значение элемента  <a href="#ab5f8f73615edc28bdbbb5dd3ee7bc9ae">Подробнее...</a><br /></td></tr>
-<tr class="separator:ab5f8f73615edc28bdbbb5dd3ee7bc9ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac11f133b2123880107b4e9bbbf33646a"><td class="memItemLeft" align="right" valign="top">virtual V&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_proxy.html#ac11f133b2123880107b4e9bbbf33646a">get</a> (<a class="el" href="indexes_8h.html#a7ca26c4f1673b1ff9eb4429f1ab10b37">Indexes</a>&lt; N &gt; &amp;&amp;indexes) const =0</td></tr>
-<tr class="memdesc:ac11f133b2123880107b4e9bbbf33646a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Запрашивает значение элемента по индексам  <a href="#ac11f133b2123880107b4e9bbbf33646a">Подробнее...</a><br /></td></tr>
-<tr class="separator:ac11f133b2123880107b4e9bbbf33646a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80b36d8a50aa55917d0bf3126cde0c8a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_proxy.html#a80b36d8a50aa55917d0bf3126cde0c8a">update</a> (const <a class="el" href="indexes_8h.html#a7ca26c4f1673b1ff9eb4429f1ab10b37">Indexes</a>&lt; N &gt; &amp;indexes, const V &amp;elem)=0</td></tr>
+<tr class="memdesc:a80b36d8a50aa55917d0bf3126cde0c8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Передает индексы и значение элемента  <a href="#a80b36d8a50aa55917d0bf3126cde0c8a">Подробнее...</a><br /></td></tr>
+<tr class="separator:a80b36d8a50aa55917d0bf3126cde0c8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7e28f4c4eae8c9cd8ae2c0472c5ae63"><td class="memItemLeft" align="right" valign="top">virtual V&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_proxy.html#af7e28f4c4eae8c9cd8ae2c0472c5ae63">get</a> (const <a class="el" href="indexes_8h.html#a7ca26c4f1673b1ff9eb4429f1ab10b37">Indexes</a>&lt; N &gt; &amp;indexes) const =0</td></tr>
+<tr class="memdesc:af7e28f4c4eae8c9cd8ae2c0472c5ae63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Запрашивает значение элемента по индексам  <a href="#af7e28f4c4eae8c9cd8ae2c0472c5ae63">Подробнее...</a><br /></td></tr>
+<tr class="separator:af7e28f4c4eae8c9cd8ae2c0472c5ae63"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
 <div class="textblock"><h3>template&lt;typename V, size_t N&gt;<br />
@@ -152,7 +152,7 @@ template&lt;typename V, size_t N&gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Методы</h2>
-<a class="anchor" id="ac11f133b2123880107b4e9bbbf33646a"></a>
+<a class="anchor" id="af7e28f4c4eae8c9cd8ae2c0472c5ae63"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -164,7 +164,7 @@ template&lt;typename V, size_t N&gt; </div>
         <tr>
           <td class="memname">virtual V <a class="el" href="class_i_proxy.html">IProxy</a>&lt; V, N &gt;::get </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="indexes_8h.html#a7ca26c4f1673b1ff9eb4429f1ab10b37">Indexes</a>&lt; N &gt; &amp;&amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="indexes_8h.html#a7ca26c4f1673b1ff9eb4429f1ab10b37">Indexes</a>&lt; N &gt; &amp;&#160;</td>
           <td class="paramname"><em>indexes</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -178,11 +178,11 @@ template&lt;typename V, size_t N&gt; </div>
 
 <p>Запрашивает значение элемента по индексам </p>
 
-<p>Замещается в <a class="el" href="class_proxy.html#aba4c95d4db81c5ceffd9d47b708cba17">Proxy&lt; V, N &gt;</a> и <a class="el" href="class_matrix.html#acd50e89239f0ed8f85b689e0e3b44327">Matrix&lt; T, Default, N &gt;</a>.</p>
+<p>Замещается в <a class="el" href="class_proxy.html#a535fdf480220226ac53b10416b10c717">Proxy&lt; V, N &gt;</a> и <a class="el" href="class_matrix.html#afbe89245eec38cdb1422f356e0720c48">Matrix&lt; T, Default, N &gt;</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ab5f8f73615edc28bdbbb5dd3ee7bc9ae"></a>
+<a class="anchor" id="a80b36d8a50aa55917d0bf3126cde0c8a"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -194,13 +194,13 @@ template&lt;typename V, size_t N&gt; </div>
         <tr>
           <td class="memname">virtual void <a class="el" href="class_i_proxy.html">IProxy</a>&lt; V, N &gt;::update </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="indexes_8h.html#a7ca26c4f1673b1ff9eb4429f1ab10b37">Indexes</a>&lt; N &gt; &amp;&amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="indexes_8h.html#a7ca26c4f1673b1ff9eb4429f1ab10b37">Indexes</a>&lt; N &gt; &amp;&#160;</td>
           <td class="paramname"><em>indexes</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">V &amp;&amp;&#160;</td>
+          <td class="paramtype">const V &amp;&#160;</td>
           <td class="paramname"><em>elem</em>&#160;</td>
         </tr>
         <tr>
@@ -218,7 +218,7 @@ template&lt;typename V, size_t N&gt; </div>
 
 <p>Передает индексы и значение элемента </p>
 
-<p>Замещается в <a class="el" href="class_proxy.html#ab912c05a0df90601b94626752dfda759">Proxy&lt; V, N &gt;</a> и <a class="el" href="class_matrix.html#a7608150e0b98deea2bf0f1e7d9e6442f">Matrix&lt; T, Default, N &gt;</a>.</p>
+<p>Замещается в <a class="el" href="class_proxy.html#a4973e0237c97126506d21d4d8903532e">Proxy&lt; V, N &gt;</a> и <a class="el" href="class_matrix.html#a1528f402443d638620e56ebaffb1016e">Matrix&lt; T, Default, N &gt;</a>.</p>
 
 </div>
 </div>

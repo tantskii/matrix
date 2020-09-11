@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">matrix
-   &#160;<span id="projectnumber">0.0.19</span>
+   &#160;<span id="projectnumber">0.0.20</span>
    </div>
   </td>
  </tr>
@@ -119,12 +119,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
 Открытые члены</h2></td></tr>
 <tr class="memitem:a2e9da55c849cfa0d98e221dc4ad649d4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_proxy.html">Proxy</a>&lt; T, N &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#a2e9da55c849cfa0d98e221dc4ad649d4">operator[]</a> (std::size_t)</td></tr>
 <tr class="separator:a2e9da55c849cfa0d98e221dc4ad649d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7608150e0b98deea2bf0f1e7d9e6442f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#a7608150e0b98deea2bf0f1e7d9e6442f">update</a> (<a class="el" href="indexes_8h.html#a7ca26c4f1673b1ff9eb4429f1ab10b37">Indexes</a>&lt; N &gt; &amp;&amp;indexes, T &amp;&amp;value) override</td></tr>
-<tr class="memdesc:a7608150e0b98deea2bf0f1e7d9e6442f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Записывает элемент в ячейку с переданными индексами  <a href="#a7608150e0b98deea2bf0f1e7d9e6442f">Подробнее...</a><br /></td></tr>
-<tr class="separator:a7608150e0b98deea2bf0f1e7d9e6442f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd50e89239f0ed8f85b689e0e3b44327"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#acd50e89239f0ed8f85b689e0e3b44327">get</a> (<a class="el" href="indexes_8h.html#a7ca26c4f1673b1ff9eb4429f1ab10b37">Indexes</a>&lt; N &gt; &amp;&amp;indexes) const override</td></tr>
-<tr class="memdesc:acd50e89239f0ed8f85b689e0e3b44327"><td class="mdescLeft">&#160;</td><td class="mdescRight">Считывает элемент из ячейки с переданными индексами  <a href="#acd50e89239f0ed8f85b689e0e3b44327">Подробнее...</a><br /></td></tr>
-<tr class="separator:acd50e89239f0ed8f85b689e0e3b44327"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1528f402443d638620e56ebaffb1016e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#a1528f402443d638620e56ebaffb1016e">update</a> (const <a class="el" href="indexes_8h.html#a7ca26c4f1673b1ff9eb4429f1ab10b37">Indexes</a>&lt; N &gt; &amp;indexes, const T &amp;value) override</td></tr>
+<tr class="memdesc:a1528f402443d638620e56ebaffb1016e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Записывает элемент в ячейку с переданными индексами  <a href="#a1528f402443d638620e56ebaffb1016e">Подробнее...</a><br /></td></tr>
+<tr class="separator:a1528f402443d638620e56ebaffb1016e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbe89245eec38cdb1422f356e0720c48"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#afbe89245eec38cdb1422f356e0720c48">get</a> (const <a class="el" href="indexes_8h.html#a7ca26c4f1673b1ff9eb4429f1ab10b37">Indexes</a>&lt; N &gt; &amp;indexes) const override</td></tr>
+<tr class="memdesc:afbe89245eec38cdb1422f356e0720c48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Считывает элемент из ячейки с переданными индексами  <a href="#afbe89245eec38cdb1422f356e0720c48">Подробнее...</a><br /></td></tr>
+<tr class="separator:afbe89245eec38cdb1422f356e0720c48"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ea8883bbd244fe0d9ab05667b7d188d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_matrix.html#a12014d83ad60bcaea2dc4d1002396938">Iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#a9ea8883bbd244fe0d9ab05667b7d188d">begin</a> ()</td></tr>
 <tr class="separator:a9ea8883bbd244fe0d9ab05667b7d188d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa53db635af14f6dbb29763bb9a832d80"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_matrix.html#a12014d83ad60bcaea2dc4d1002396938">Iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix.html#aa53db635af14f6dbb29763bb9a832d80">end</a> ()</td></tr>
@@ -203,7 +203,7 @@ template&lt;typename T , T Default, size_t N&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="acd50e89239f0ed8f85b689e0e3b44327"></a>
+<a class="anchor" id="afbe89245eec38cdb1422f356e0720c48"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -215,7 +215,7 @@ template&lt;typename T , T Default, size_t N&gt; </div>
         <tr>
           <td class="memname">T <a class="el" href="class_matrix.html">Matrix</a>&lt; T, Default, N &gt;::get </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="indexes_8h.html#a7ca26c4f1673b1ff9eb4429f1ab10b37">Indexes</a>&lt; N &gt; &amp;&amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="indexes_8h.html#a7ca26c4f1673b1ff9eb4429f1ab10b37">Indexes</a>&lt; N &gt; &amp;&#160;</td>
           <td class="paramname"><em>indexes</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -236,7 +236,7 @@ template&lt;typename T , T Default, size_t N&gt; </div>
 </dl>
 <dl class="section return"><dt>Возвращает</dt><dd>Хранимое значение </dd></dl>
 
-<p>Замещает <a class="el" href="class_i_proxy.html#ac11f133b2123880107b4e9bbbf33646a">IProxy&lt; T, N &gt;</a>.</p>
+<p>Замещает <a class="el" href="class_i_proxy.html#af7e28f4c4eae8c9cd8ae2c0472c5ae63">IProxy&lt; T, N &gt;</a>.</p>
 
 </div>
 </div>
@@ -279,7 +279,7 @@ template&lt;typename T , T Default, size_t N&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a7608150e0b98deea2bf0f1e7d9e6442f"></a>
+<a class="anchor" id="a1528f402443d638620e56ebaffb1016e"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -291,13 +291,13 @@ template&lt;typename T , T Default, size_t N&gt; </div>
         <tr>
           <td class="memname">void <a class="el" href="class_matrix.html">Matrix</a>&lt; T, Default, N &gt;::update </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="indexes_8h.html#a7ca26c4f1673b1ff9eb4429f1ab10b37">Indexes</a>&lt; N &gt; &amp;&amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="indexes_8h.html#a7ca26c4f1673b1ff9eb4429f1ab10b37">Indexes</a>&lt; N &gt; &amp;&#160;</td>
           <td class="paramname"><em>indexes</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">T &amp;&amp;&#160;</td>
+          <td class="paramtype">const T &amp;&#160;</td>
           <td class="paramname"><em>value</em>&#160;</td>
         </tr>
         <tr>
@@ -322,7 +322,7 @@ template&lt;typename T , T Default, size_t N&gt; </div>
   </dd>
 </dl>
 
-<p>Замещает <a class="el" href="class_i_proxy.html#ab5f8f73615edc28bdbbb5dd3ee7bc9ae">IProxy&lt; T, N &gt;</a>.</p>
+<p>Замещает <a class="el" href="class_i_proxy.html#a80b36d8a50aa55917d0bf3126cde0c8a">IProxy&lt; T, N &gt;</a>.</p>
 
 </div>
 </div>

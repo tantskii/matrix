@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['update',['update',['../class_i_proxy.html#ab5f8f73615edc28bdbbb5dd3ee7bc9ae',1,'IProxy::update()'],['../class_proxy.html#ab912c05a0df90601b94626752dfda759',1,'Proxy::update()'],['../class_matrix.html#a7608150e0b98deea2bf0f1e7d9e6442f',1,'Matrix::update()']]]
+  ['update',['update',['../class_i_proxy.html#a80b36d8a50aa55917d0bf3126cde0c8a',1,'IProxy::update()'],['../class_proxy.html#a4973e0237c97126506d21d4d8903532e',1,'Proxy::update()'],['../class_matrix.html#a1528f402443d638620e56ebaffb1016e',1,'Matrix::update()']]]
 ];
