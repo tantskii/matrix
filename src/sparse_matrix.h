@@ -27,8 +27,8 @@ public:
     
     Proxy<T, N> operator[](std::size_t);
     
-    void update(Indexes<N>&& indexes, T&& value) override; ///< Записывает элемент в ячейку с переданными индексами
-    T get(Indexes<N>&& indexes) const override;            ///< Считывает элемент из ячейки с переданными индексами
+    void update(const Indexes<N>& indexes, const T& value) override; ///< Записывает элемент в ячейку с переданными индексами
+    T get(const Indexes<N>& indexes) const override;            ///< Считывает элемент из ячейки с переданными индексами
     
     Iterator begin();
     Iterator end();
@@ -44,7 +44,7 @@ private:
  @param value Записываемое значение
  */
 template <typename T, T Default, size_t N>
-void Matrix<T, Default, N>::update(Indexes<N>&& indexes, T&& value) {
+void Matrix<T, Default, N>::update(const Indexes<N>& indexes, const T& value) {
     /*
       1. Если пришло    значение по умолчанию и элемент с такими индексами    существует
       -- удаляем этот элемент
@@ -77,7 +77,7 @@ void Matrix<T, Default, N>::update(Indexes<N>&& indexes, T&& value) {
 @return Хранимое значение
 */
 template <typename T, T Default, size_t N>
-T Matrix<T, Default, N>::get(Indexes<N>&& indexes) const {
+T Matrix<T, Default, N>::get(const Indexes<N>& indexes) const {
     /*
      1. Если элемент с такими индексами    существует
      -- возвращаем его

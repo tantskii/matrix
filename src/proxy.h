@@ -23,8 +23,8 @@ template <typename V, size_t N>
 class IProxy {
 public:
     ~IProxy() = default;
-    virtual void update(Indexes<N>&& indexes, V&& elem) = 0; ///< Передает индексы и значение элемента
-    virtual V get(Indexes<N>&& indexes) const = 0;           ///< Запрашивает значение элемента по индексам
+    virtual void update(const Indexes<N>& indexes, const V& elem) = 0; ///< Передает индексы и значение элемента
+    virtual V get(const Indexes<N>& indexes) const = 0;                ///< Запрашивает значение элемента по индексам
 };
 
 
@@ -39,12 +39,12 @@ class Proxy : public IProxy<V, N> {
 public:
     Proxy(IProxy<V, N> * prevProxyPtr);
     
-    Proxy<V, N>& operator=(V&& elem);
+    Proxy<V, N>& operator=(const V& elem);
     Proxy<V, N>& operator[](std::size_t index);
     operator V();
     
-    void update(Indexes<N>&& indexes, V&& elem) override; ///< Передает индексы и значение элемента в m_subjectPtr
-    V get(Indexes<N>&& indexes) const override;           ///< Запрашивает значение элемента по индексам у m_subjectPtr
+    void update(const Indexes<N>& indexes, const V& elem) override; ///< Передает индексы и значение элемента в m_subjectPtr
+    V get(const Indexes<N>& indexes) const override;           ///< Запрашивает значение элемента по индексам у m_subjectPtr
     void addIndex(size_t index);                       ///< Добавляет индекс в m_indexes
 private:
     IProxy<V, N> * m_subjectPtr; ///<  Указатель на объект-создатель
@@ -75,8 +75,8 @@ Proxy<V, N>& Proxy<V, N>::operator[](std::size_t index) {
  @return Ссылку на себя
  */
 template <typename V, size_t N>
-Proxy<V, N>& Proxy<V, N>::operator=(V&& elem) {
-    update(std::move(m_indexes), std::move(elem));
+Proxy<V, N>& Proxy<V, N>::operator=(const V& elem) {
+    update(m_indexes, elem);
     return *this;
 }
 
@@ -88,12 +88,12 @@ Proxy<V, N>& Proxy<V, N>::operator=(V&& elem) {
  @throw std::runtime_error Если передано слишком мало индексов
  */
 template <typename V, size_t N>
-void Proxy<V, N>::update(Indexes<N>&& indexes, V&& elem) {
+void Proxy<V, N>::update(const Indexes<N>& indexes, const V& elem) {
     if (m_counter < N) {
         std::string error_message = "Too few indexes";
         throw std::runtime_error(error_message);
     }
-    m_subjectPtr->update(std::move(indexes), std::move(elem));
+    m_subjectPtr->update(indexes, elem);
 }
 
 /*!
@@ -102,8 +102,8 @@ void Proxy<V, N>::update(Indexes<N>&& indexes, V&& elem) {
  @return Элемент
  */
 template <typename V, size_t N>
-V Proxy<V, N>::get(Indexes<N>&& indexes) const {
-    return m_subjectPtr->get(std::move(indexes));
+V Proxy<V, N>::get(const Indexes<N>& indexes) const {
+    return m_subjectPtr->get(indexes);
 }
 
 
@@ -113,7 +113,7 @@ V Proxy<V, N>::get(Indexes<N>&& indexes) const {
  */
 template <typename V, size_t N>
 Proxy<V, N>::operator V() {
-    return get(std::move(m_indexes));
+    return get(m_indexes);
 }
 
 
