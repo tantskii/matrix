@@ -27,14 +27,14 @@ public:
         NOT_FOUND ///< Указывает, что объект не был найден
     };
     
-    /// @brief тип ключа, представляет из себя std::tuple из N индексов типа size_t
-    using Key      = decltype(key_type (std::make_index_sequence<N>{}));
+    /// @brief тип ключа
+    using Key      = KeyType<N>;
     
     /// @brief тип хранимого элемента, представляет из себя std::tuple из N индексов типа size_t и последющим значением типа T
-    using Element  = decltype(elem_type(std::make_index_sequence<N>{}, T{}));
+    using Element  = ElementType<T, N>;
     
     /// @brief сокращение для итератора в std::list<Element>
-    using It       = typename std::list<Element>::iterator;
+    using It       = typename std::list<Element>::const_iterator;
     
     /// @brief сокращение для итератора в std::map<Key, It>
     using MapIt    = typename std::map<Key, It>::const_iterator;
@@ -46,7 +46,7 @@ public:
     size_t size() const;                                      ///< Возвращает количесвто хранимых элементов
     It begin();
     It end();
-    Key makeKey(const Indexes<N>& indexes) const;                ///< Создает ключ
+    Key makeKey(const Indexes<N>& indexes) const;             ///< Создает ключ
     Element makeElement(const Key& key, const T& elem) const; ///< Создает элемент
 private:
     void erase(MapIt it);          ///< Удаление по переданному итератору

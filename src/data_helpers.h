@@ -45,3 +45,21 @@ template<typename T, typename Key, std::size_t... I>
 auto makeElemImpl(const Key& key, std::index_sequence<I...>, const T& elem) {
     return std::make_tuple(std::get<I>(key)..., elem);
 }
+
+
+/*!
+ Скоращение для типа ключа
+ @tparam N Размерность матрицы
+ */
+template <size_t N>
+using KeyType = decltype(key_type (std::make_index_sequence<N>{}));
+
+
+/*!
+ Скоращение для типа элемента
+ @tparam T Тип хранимого значения
+ @tparam N Размерность матрицы
+*/
+template <typename T, size_t N>
+using ElementType = decltype(elem_type(std::make_index_sequence<N>{}, T{}));
+
