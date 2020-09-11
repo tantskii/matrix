@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">matrix
-   &#160;<span id="projectnumber">0.0.18</span>
+   &#160;<span id="projectnumber">0.0.19</span>
    </div>
   </td>
  </tr>
@@ -104,44 +104,44 @@ var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
  }<tr class="memdesc:aa9daf013df1e0bf5a969dfede172bd11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Набор возможных результатов поиска  <a href="class_data.html#aa9daf013df1e0bf5a969dfede172bd11">Подробнее...</a><br /></td></tr>
 </td></tr>
 <tr class="separator:aa9daf013df1e0bf5a969dfede172bd11"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed51f8e1c1fd8ee6268da530d00609d8"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data.html#aed51f8e1c1fd8ee6268da530d00609d8">Key</a> = decltype(<a class="el" href="data__helpers_8h.html#a978800d2498641083008e02a0cbbf09f">key_type</a>(std::make_index_sequence&lt; N &gt;{}))</td></tr>
-<tr class="memdesc:aed51f8e1c1fd8ee6268da530d00609d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">тип ключа, представляет из себя std::tuple из N индексов типа size_t.  <a href="#aed51f8e1c1fd8ee6268da530d00609d8">Подробнее...</a><br /></td></tr>
-<tr class="separator:aed51f8e1c1fd8ee6268da530d00609d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a19e64e4a8f87c38c6a88ae230d911d88"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data.html#a19e64e4a8f87c38c6a88ae230d911d88">Element</a> = decltype(<a class="el" href="data__helpers_8h.html#a609b85f2c5f9642af9505b72f3eae98f">elem_type</a>(std::make_index_sequence&lt; N &gt;{}, T{}))</td></tr>
-<tr class="memdesc:a19e64e4a8f87c38c6a88ae230d911d88"><td class="mdescLeft">&#160;</td><td class="mdescRight">тип хранимого элемента, представляет из себя std::tuple из N индексов типа size_t и последющим значением типа T.  <a href="#a19e64e4a8f87c38c6a88ae230d911d88">Подробнее...</a><br /></td></tr>
-<tr class="separator:a19e64e4a8f87c38c6a88ae230d911d88"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a412427a9ee8f5aa7a2f2a9db6fd490da"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data.html#a412427a9ee8f5aa7a2f2a9db6fd490da">It</a> = typename std::list&lt; <a class="el" href="class_data.html#a19e64e4a8f87c38c6a88ae230d911d88">Element</a> &gt;::iterator</td></tr>
-<tr class="memdesc:a412427a9ee8f5aa7a2f2a9db6fd490da"><td class="mdescLeft">&#160;</td><td class="mdescRight">сокращение для итератора в std::list&lt;Element&gt;  <a href="#a412427a9ee8f5aa7a2f2a9db6fd490da">Подробнее...</a><br /></td></tr>
-<tr class="separator:a412427a9ee8f5aa7a2f2a9db6fd490da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3d538f80ad29fc97dd55089e0fb81d85"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data.html#a3d538f80ad29fc97dd55089e0fb81d85">MapIt</a> = typename std::map&lt; <a class="el" href="class_data.html#aed51f8e1c1fd8ee6268da530d00609d8">Key</a>, <a class="el" href="class_data.html#a412427a9ee8f5aa7a2f2a9db6fd490da">It</a> &gt;::const_iterator</td></tr>
+<tr class="memitem:a77a605dedffca30b323ba78b68f46868"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data.html#a77a605dedffca30b323ba78b68f46868">Key</a> = <a class="el" href="data__helpers_8h.html#a575b0bd87abcebfb768c46bcc885ebbb">KeyType</a>&lt; N &gt;</td></tr>
+<tr class="memdesc:a77a605dedffca30b323ba78b68f46868"><td class="mdescLeft">&#160;</td><td class="mdescRight">тип ключа  <a href="#a77a605dedffca30b323ba78b68f46868">Подробнее...</a><br /></td></tr>
+<tr class="separator:a77a605dedffca30b323ba78b68f46868"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7baf4ddb6dcfa94bf2e7bab93fbae010"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data.html#a7baf4ddb6dcfa94bf2e7bab93fbae010">Element</a> = <a class="el" href="data__helpers_8h.html#a2160803a23997b356f5cdf9f74a3f915">ElementType</a>&lt; T, N &gt;</td></tr>
+<tr class="memdesc:a7baf4ddb6dcfa94bf2e7bab93fbae010"><td class="mdescLeft">&#160;</td><td class="mdescRight">тип хранимого элемента, представляет из себя std::tuple из N индексов типа size_t и последющим значением типа T.  <a href="#a7baf4ddb6dcfa94bf2e7bab93fbae010">Подробнее...</a><br /></td></tr>
+<tr class="separator:a7baf4ddb6dcfa94bf2e7bab93fbae010"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04cbf75b4d8bf623a576ca868af76cda"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data.html#a04cbf75b4d8bf623a576ca868af76cda">It</a> = typename std::list&lt; <a class="el" href="class_data.html#a7baf4ddb6dcfa94bf2e7bab93fbae010">Element</a> &gt;::const_iterator</td></tr>
+<tr class="memdesc:a04cbf75b4d8bf623a576ca868af76cda"><td class="mdescLeft">&#160;</td><td class="mdescRight">сокращение для итератора в std::list&lt;Element&gt;  <a href="#a04cbf75b4d8bf623a576ca868af76cda">Подробнее...</a><br /></td></tr>
+<tr class="separator:a04cbf75b4d8bf623a576ca868af76cda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d538f80ad29fc97dd55089e0fb81d85"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data.html#a3d538f80ad29fc97dd55089e0fb81d85">MapIt</a> = typename std::map&lt; <a class="el" href="class_data.html#a77a605dedffca30b323ba78b68f46868">Key</a>, <a class="el" href="class_data.html#a04cbf75b4d8bf623a576ca868af76cda">It</a> &gt;::const_iterator</td></tr>
 <tr class="memdesc:a3d538f80ad29fc97dd55089e0fb81d85"><td class="mdescLeft">&#160;</td><td class="mdescRight">сокращение для итератора в std::map&lt;Key, It&gt;  <a href="#a3d538f80ad29fc97dd55089e0fb81d85">Подробнее...</a><br /></td></tr>
 <tr class="separator:a3d538f80ad29fc97dd55089e0fb81d85"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Открытые члены</h2></td></tr>
-<tr class="memitem:adb60b6b534f6978efa86f33f8ca3dec3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data.html#adb60b6b534f6978efa86f33f8ca3dec3">erase</a> (const <a class="el" href="class_data.html#aed51f8e1c1fd8ee6268da530d00609d8">Key</a> &amp;key)</td></tr>
+<tr class="memitem:adb60b6b534f6978efa86f33f8ca3dec3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data.html#adb60b6b534f6978efa86f33f8ca3dec3">erase</a> (const <a class="el" href="class_data.html#a77a605dedffca30b323ba78b68f46868">Key</a> &amp;key)</td></tr>
 <tr class="memdesc:adb60b6b534f6978efa86f33f8ca3dec3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Удаляет элемент по ключу  <a href="#adb60b6b534f6978efa86f33f8ca3dec3">Подробнее...</a><br /></td></tr>
 <tr class="separator:adb60b6b534f6978efa86f33f8ca3dec3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a026da7d9c3e2647e8213a2db7ddb8113"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data.html#a026da7d9c3e2647e8213a2db7ddb8113">insert</a> (const <a class="el" href="class_data.html#aed51f8e1c1fd8ee6268da530d00609d8">Key</a> &amp;key, const T &amp;elem)</td></tr>
+<tr class="memitem:a026da7d9c3e2647e8213a2db7ddb8113"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data.html#a026da7d9c3e2647e8213a2db7ddb8113">insert</a> (const <a class="el" href="class_data.html#a77a605dedffca30b323ba78b68f46868">Key</a> &amp;key, const T &amp;elem)</td></tr>
 <tr class="memdesc:a026da7d9c3e2647e8213a2db7ddb8113"><td class="mdescLeft">&#160;</td><td class="mdescRight">Добавляет элемент  <a href="#a026da7d9c3e2647e8213a2db7ddb8113">Подробнее...</a><br /></td></tr>
 <tr class="separator:a026da7d9c3e2647e8213a2db7ddb8113"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a15012d998389851b9897d7f718aaad6e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data.html#a15012d998389851b9897d7f718aaad6e">contains</a> (const <a class="el" href="class_data.html#aed51f8e1c1fd8ee6268da530d00609d8">Key</a> &amp;key) const </td></tr>
+<tr class="memitem:a15012d998389851b9897d7f718aaad6e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data.html#a15012d998389851b9897d7f718aaad6e">contains</a> (const <a class="el" href="class_data.html#a77a605dedffca30b323ba78b68f46868">Key</a> &amp;key) const </td></tr>
 <tr class="memdesc:a15012d998389851b9897d7f718aaad6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет, есть ли элемент по переданному ключу  <a href="#a15012d998389851b9897d7f718aaad6e">Подробнее...</a><br /></td></tr>
 <tr class="separator:a15012d998389851b9897d7f718aaad6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5cac82793efa9a8b4b66fe5766e0f5a0"><td class="memItemLeft" align="right" valign="top">std::pair&lt; <a class="el" href="class_data.html#aa9daf013df1e0bf5a969dfede172bd11">FindStatus</a>, T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data.html#a5cac82793efa9a8b4b66fe5766e0f5a0">find</a> (const <a class="el" href="class_data.html#aed51f8e1c1fd8ee6268da530d00609d8">Key</a> &amp;key) const </td></tr>
+<tr class="memitem:a5cac82793efa9a8b4b66fe5766e0f5a0"><td class="memItemLeft" align="right" valign="top">std::pair&lt; <a class="el" href="class_data.html#aa9daf013df1e0bf5a969dfede172bd11">FindStatus</a>, T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data.html#a5cac82793efa9a8b4b66fe5766e0f5a0">find</a> (const <a class="el" href="class_data.html#a77a605dedffca30b323ba78b68f46868">Key</a> &amp;key) const </td></tr>
 <tr class="memdesc:a5cac82793efa9a8b4b66fe5766e0f5a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Находит элемент по ключу  <a href="#a5cac82793efa9a8b4b66fe5766e0f5a0">Подробнее...</a><br /></td></tr>
 <tr class="separator:a5cac82793efa9a8b4b66fe5766e0f5a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acffcf15ca62c54bc37118fc5b525febd"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data.html#acffcf15ca62c54bc37118fc5b525febd">size</a> () const </td></tr>
 <tr class="memdesc:acffcf15ca62c54bc37118fc5b525febd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает количесвто хранимых элементов  <a href="#acffcf15ca62c54bc37118fc5b525febd">Подробнее...</a><br /></td></tr>
 <tr class="separator:acffcf15ca62c54bc37118fc5b525febd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8f9f4b3e1adf898f038bd8f512c9f73c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_data.html#a412427a9ee8f5aa7a2f2a9db6fd490da">It</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data.html#a8f9f4b3e1adf898f038bd8f512c9f73c">begin</a> ()</td></tr>
+<tr class="memitem:a8f9f4b3e1adf898f038bd8f512c9f73c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_data.html#a04cbf75b4d8bf623a576ca868af76cda">It</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data.html#a8f9f4b3e1adf898f038bd8f512c9f73c">begin</a> ()</td></tr>
 <tr class="separator:a8f9f4b3e1adf898f038bd8f512c9f73c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a86fb0ff46cb84f83d70c40a63bde8042"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_data.html#a412427a9ee8f5aa7a2f2a9db6fd490da">It</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data.html#a86fb0ff46cb84f83d70c40a63bde8042">end</a> ()</td></tr>
+<tr class="memitem:a86fb0ff46cb84f83d70c40a63bde8042"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_data.html#a04cbf75b4d8bf623a576ca868af76cda">It</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data.html#a86fb0ff46cb84f83d70c40a63bde8042">end</a> ()</td></tr>
 <tr class="separator:a86fb0ff46cb84f83d70c40a63bde8042"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a58cbd1b519c50c3e9ceb8d19d037c99a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_data.html#aed51f8e1c1fd8ee6268da530d00609d8">Key</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data.html#a58cbd1b519c50c3e9ceb8d19d037c99a">makeKey</a> (const <a class="el" href="indexes_8h.html#a7ca26c4f1673b1ff9eb4429f1ab10b37">Indexes</a>&lt; N &gt; &amp;indexes) const </td></tr>
+<tr class="memitem:a58cbd1b519c50c3e9ceb8d19d037c99a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_data.html#a77a605dedffca30b323ba78b68f46868">Key</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data.html#a58cbd1b519c50c3e9ceb8d19d037c99a">makeKey</a> (const <a class="el" href="indexes_8h.html#a7ca26c4f1673b1ff9eb4429f1ab10b37">Indexes</a>&lt; N &gt; &amp;indexes) const </td></tr>
 <tr class="memdesc:a58cbd1b519c50c3e9ceb8d19d037c99a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Создает ключ  <a href="#a58cbd1b519c50c3e9ceb8d19d037c99a">Подробнее...</a><br /></td></tr>
 <tr class="separator:a58cbd1b519c50c3e9ceb8d19d037c99a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4e35ab453793dd54788c2b813ab9dcee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_data.html#a19e64e4a8f87c38c6a88ae230d911d88">Element</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data.html#a4e35ab453793dd54788c2b813ab9dcee">makeElement</a> (const <a class="el" href="class_data.html#aed51f8e1c1fd8ee6268da530d00609d8">Key</a> &amp;key, const T &amp;elem) const </td></tr>
+<tr class="memitem:a4e35ab453793dd54788c2b813ab9dcee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_data.html#a7baf4ddb6dcfa94bf2e7bab93fbae010">Element</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data.html#a4e35ab453793dd54788c2b813ab9dcee">makeElement</a> (const <a class="el" href="class_data.html#a77a605dedffca30b323ba78b68f46868">Key</a> &amp;key, const T &amp;elem) const </td></tr>
 <tr class="memdesc:a4e35ab453793dd54788c2b813ab9dcee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Создает элемент  <a href="#a4e35ab453793dd54788c2b813ab9dcee">Подробнее...</a><br /></td></tr>
 <tr class="separator:a4e35ab453793dd54788c2b813ab9dcee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -158,14 +158,14 @@ class Data&lt; T, N &gt;</h3>
   </dd>
 </dl>
 </div><h2 class="groupheader">Определения типов</h2>
-<a class="anchor" id="a19e64e4a8f87c38c6a88ae230d911d88"></a>
+<a class="anchor" id="a7baf4ddb6dcfa94bf2e7bab93fbae010"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T, size_t N&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="class_data.html">Data</a>&lt; T, N &gt;::<a class="el" href="class_data.html#a19e64e4a8f87c38c6a88ae230d911d88">Element</a> =  decltype(<a class="el" href="data__helpers_8h.html#a609b85f2c5f9642af9505b72f3eae98f">elem_type</a>(std::make_index_sequence&lt;N&gt;{}, T{}))</td>
+          <td class="memname">using <a class="el" href="class_data.html">Data</a>&lt; T, N &gt;::<a class="el" href="class_data.html#a7baf4ddb6dcfa94bf2e7bab93fbae010">Element</a> =  <a class="el" href="data__helpers_8h.html#a2160803a23997b356f5cdf9f74a3f915">ElementType</a>&lt;T, N&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -174,14 +174,14 @@ template&lt;typename T, size_t N&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a412427a9ee8f5aa7a2f2a9db6fd490da"></a>
+<a class="anchor" id="a04cbf75b4d8bf623a576ca868af76cda"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T, size_t N&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="class_data.html">Data</a>&lt; T, N &gt;::<a class="el" href="class_data.html#a412427a9ee8f5aa7a2f2a9db6fd490da">It</a> =  typename std::list&lt;<a class="el" href="class_data.html#a19e64e4a8f87c38c6a88ae230d911d88">Element</a>&gt;::iterator</td>
+          <td class="memname">using <a class="el" href="class_data.html">Data</a>&lt; T, N &gt;::<a class="el" href="class_data.html#a04cbf75b4d8bf623a576ca868af76cda">It</a> =  typename std::list&lt;<a class="el" href="class_data.html#a7baf4ddb6dcfa94bf2e7bab93fbae010">Element</a>&gt;::const_iterator</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -190,19 +190,19 @@ template&lt;typename T, size_t N&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="aed51f8e1c1fd8ee6268da530d00609d8"></a>
+<a class="anchor" id="a77a605dedffca30b323ba78b68f46868"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T, size_t N&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="class_data.html">Data</a>&lt; T, N &gt;::<a class="el" href="class_data.html#aed51f8e1c1fd8ee6268da530d00609d8">Key</a> =  decltype(<a class="el" href="data__helpers_8h.html#a978800d2498641083008e02a0cbbf09f">key_type</a> (std::make_index_sequence&lt;N&gt;{}))</td>
+          <td class="memname">using <a class="el" href="class_data.html">Data</a>&lt; T, N &gt;::<a class="el" href="class_data.html#a77a605dedffca30b323ba78b68f46868">Key</a> =  <a class="el" href="data__helpers_8h.html#a575b0bd87abcebfb768c46bcc885ebbb">KeyType</a>&lt;N&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>тип ключа, представляет из себя std::tuple из N индексов типа size_t. </p>
+<p>тип ключа </p>
 
 </div>
 </div>
@@ -213,7 +213,7 @@ template&lt;typename T, size_t N&gt; </div>
 template&lt;typename T, size_t N&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="class_data.html">Data</a>&lt; T, N &gt;::<a class="el" href="class_data.html#a3d538f80ad29fc97dd55089e0fb81d85">MapIt</a> =  typename std::map&lt;<a class="el" href="class_data.html#aed51f8e1c1fd8ee6268da530d00609d8">Key</a>, <a class="el" href="class_data.html#a412427a9ee8f5aa7a2f2a9db6fd490da">It</a>&gt;::const_iterator</td>
+          <td class="memname">using <a class="el" href="class_data.html">Data</a>&lt; T, N &gt;::<a class="el" href="class_data.html#a3d538f80ad29fc97dd55089e0fb81d85">MapIt</a> =  typename std::map&lt;<a class="el" href="class_data.html#a77a605dedffca30b323ba78b68f46868">Key</a>, <a class="el" href="class_data.html#a04cbf75b4d8bf623a576ca868af76cda">It</a>&gt;::const_iterator</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -263,7 +263,7 @@ template&lt;typename T, size_t N&gt; </div>
 template&lt;typename T , size_t N&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_data.html">Data</a>&lt; T, N &gt;::<a class="el" href="class_data.html#a412427a9ee8f5aa7a2f2a9db6fd490da">It</a> <a class="el" href="class_data.html">Data</a>&lt; T, N &gt;::begin </td>
+          <td class="memname"><a class="el" href="class_data.html">Data</a>&lt; T, N &gt;::<a class="el" href="class_data.html#a04cbf75b4d8bf623a576ca868af76cda">It</a> <a class="el" href="class_data.html">Data</a>&lt; T, N &gt;::begin </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -283,7 +283,7 @@ template&lt;typename T , size_t N&gt; </div>
         <tr>
           <td class="memname">bool <a class="el" href="class_data.html">Data</a>&lt; T, N &gt;::contains </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="class_data.html#aed51f8e1c1fd8ee6268da530d00609d8">Key</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="class_data.html#a77a605dedffca30b323ba78b68f46868">Key</a> &amp;&#160;</td>
           <td class="paramname"><em>key</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -308,7 +308,7 @@ template&lt;typename T , size_t N&gt; </div>
 template&lt;typename T , size_t N&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_data.html">Data</a>&lt; T, N &gt;::<a class="el" href="class_data.html#a412427a9ee8f5aa7a2f2a9db6fd490da">It</a> <a class="el" href="class_data.html">Data</a>&lt; T, N &gt;::end </td>
+          <td class="memname"><a class="el" href="class_data.html">Data</a>&lt; T, N &gt;::<a class="el" href="class_data.html#a04cbf75b4d8bf623a576ca868af76cda">It</a> <a class="el" href="class_data.html">Data</a>&lt; T, N &gt;::end </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -328,7 +328,7 @@ template&lt;typename T , size_t N&gt; </div>
         <tr>
           <td class="memname">void <a class="el" href="class_data.html">Data</a>&lt; T, N &gt;::erase </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="class_data.html#aed51f8e1c1fd8ee6268da530d00609d8">Key</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="class_data.html#a77a605dedffca30b323ba78b68f46868">Key</a> &amp;&#160;</td>
           <td class="paramname"><em>key</em></td><td>)</td>
           <td></td>
         </tr>
@@ -360,7 +360,7 @@ template&lt;typename T , size_t N&gt; </div>
         <tr>
           <td class="memname">std::pair&lt; typename <a class="el" href="class_data.html">Data</a>&lt; T, N &gt;::<a class="el" href="class_data.html#aa9daf013df1e0bf5a969dfede172bd11">FindStatus</a>, T &gt; <a class="el" href="class_data.html">Data</a>&lt; T, N &gt;::find </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="class_data.html#aed51f8e1c1fd8ee6268da530d00609d8">Key</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="class_data.html#a77a605dedffca30b323ba78b68f46868">Key</a> &amp;&#160;</td>
           <td class="paramname"><em>key</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -387,7 +387,7 @@ template&lt;typename T , size_t N&gt; </div>
         <tr>
           <td class="memname">void <a class="el" href="class_data.html">Data</a>&lt; T, N &gt;::insert </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="class_data.html#aed51f8e1c1fd8ee6268da530d00609d8">Key</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="class_data.html#a77a605dedffca30b323ba78b68f46868">Key</a> &amp;&#160;</td>
           <td class="paramname"><em>key</em>, </td>
         </tr>
         <tr>
@@ -422,9 +422,9 @@ template&lt;typename T , size_t N&gt; </div>
 template&lt;typename T , size_t N&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_data.html">Data</a>&lt; T, N &gt;::<a class="el" href="class_data.html#a19e64e4a8f87c38c6a88ae230d911d88">Element</a> <a class="el" href="class_data.html">Data</a>&lt; T, N &gt;::makeElement </td>
+          <td class="memname"><a class="el" href="class_data.html">Data</a>&lt; T, N &gt;::<a class="el" href="class_data.html#a7baf4ddb6dcfa94bf2e7bab93fbae010">Element</a> <a class="el" href="class_data.html">Data</a>&lt; T, N &gt;::makeElement </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="class_data.html#aed51f8e1c1fd8ee6268da530d00609d8">Key</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="class_data.html#a77a605dedffca30b323ba78b68f46868">Key</a> &amp;&#160;</td>
           <td class="paramname"><em>key</em>, </td>
         </tr>
         <tr>
@@ -459,7 +459,7 @@ template&lt;typename T , size_t N&gt; </div>
 template&lt;typename T , size_t N&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_data.html">Data</a>&lt; T, N &gt;::<a class="el" href="class_data.html#aed51f8e1c1fd8ee6268da530d00609d8">Key</a> <a class="el" href="class_data.html">Data</a>&lt; T, N &gt;::makeKey </td>
+          <td class="memname"><a class="el" href="class_data.html">Data</a>&lt; T, N &gt;::<a class="el" href="class_data.html#a77a605dedffca30b323ba78b68f46868">Key</a> <a class="el" href="class_data.html">Data</a>&lt; T, N &gt;::makeKey </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="indexes_8h.html#a7ca26c4f1673b1ff9eb4429f1ab10b37">Indexes</a>&lt; N &gt; &amp;&#160;</td>
           <td class="paramname"><em>indexes</em></td><td>)</td>

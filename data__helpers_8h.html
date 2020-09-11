@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">matrix
-   &#160;<span id="projectnumber">0.0.18</span>
+   &#160;<span id="projectnumber">0.0.19</span>
    </div>
   </td>
  </tr>
@@ -86,6 +86,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#typedef-members">Определения типов</a> &#124;
 <a href="#func-members">Функции</a>  </div>
   <div class="headertitle">
 <div class="title">Файл data_helpers.h</div>  </div>
@@ -114,6 +115,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
 </div>
 <p><a href="data__helpers_8h_source.html">См. исходные тексты.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Определения типов</h2></td></tr>
+<tr class="memitem:a575b0bd87abcebfb768c46bcc885ebbb"><td class="memTemplParams" colspan="2">template&lt;size_t N&gt; </td></tr>
+<tr class="memitem:a575b0bd87abcebfb768c46bcc885ebbb"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="data__helpers_8h.html#a575b0bd87abcebfb768c46bcc885ebbb">KeyType</a> = decltype(<a class="el" href="data__helpers_8h.html#a978800d2498641083008e02a0cbbf09f">key_type</a>(std::make_index_sequence&lt; N &gt;{}))</td></tr>
+<tr class="separator:a575b0bd87abcebfb768c46bcc885ebbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2160803a23997b356f5cdf9f74a3f915"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t N&gt; </td></tr>
+<tr class="memitem:a2160803a23997b356f5cdf9f74a3f915"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="data__helpers_8h.html#a2160803a23997b356f5cdf9f74a3f915">ElementType</a> = decltype(<a class="el" href="data__helpers_8h.html#a609b85f2c5f9642af9505b72f3eae98f">elem_type</a>(std::make_index_sequence&lt; N &gt;{}, T{}))</td></tr>
+<tr class="separator:a2160803a23997b356f5cdf9f74a3f915"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Функции</h2></td></tr>
 <tr class="memitem:a978800d2498641083008e02a0cbbf09f"><td class="memTemplParams" colspan="2">template&lt;std::size_t... Is&gt; </td></tr>
@@ -131,7 +141,49 @@ var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
 <div class="textblock"><p>Данный заголовочный файл содержит вспомогательные функии класса Data&lt;T, N&gt; описанного в <a class="el" href="data_8h.html" title="Заголовочный файл с описанием и реализацией класса, осуществляющего хранение данных разреженной матри...">data.h</a>. </p>
-</div><h2 class="groupheader">Функции</h2>
+</div><h2 class="groupheader">Типы</h2>
+<a class="anchor" id="a2160803a23997b356f5cdf9f74a3f915"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , size_t N&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="data__helpers_8h.html#a2160803a23997b356f5cdf9f74a3f915">ElementType</a> =  decltype(<a class="el" href="data__helpers_8h.html#a609b85f2c5f9642af9505b72f3eae98f">elem_type</a>(std::make_index_sequence&lt;N&gt;{}, T{}))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Скоращение для типа элемента </p><dl class="tparams"><dt>Параметры шаблона</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Тип хранимого значения </td></tr>
+    <tr><td class="paramname">N</td><td>Размерность матрицы </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a575b0bd87abcebfb768c46bcc885ebbb"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t N&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="data__helpers_8h.html#a575b0bd87abcebfb768c46bcc885ebbb">KeyType</a> =  decltype(<a class="el" href="data__helpers_8h.html#a978800d2498641083008e02a0cbbf09f">key_type</a> (std::make_index_sequence&lt;N&gt;{}))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Скоращение для типа ключа </p><dl class="tparams"><dt>Параметры шаблона</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">N</td><td>Размерность матрицы </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Функции</h2>
 <a class="anchor" id="a609b85f2c5f9642af9505b72f3eae98f"></a>
 <div class="memitem">
 <div class="memproto">
