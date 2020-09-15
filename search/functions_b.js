@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['set',['set',['../_c_make_lists_8txt.html#a52c744c556d315a017e6d4ac4e5f20da',1,'CMakeLists.txt']]],
-  ['size',['size',['../class_data.html#acffcf15ca62c54bc37118fc5b525febd',1,'Data::size()'],['../class_matrix.html#a6a097d732d748f098d75f9fa6b9b1413',1,'Matrix::size()']]]
+  ['update',['update',['../class_i_proxy.html#a80b36d8a50aa55917d0bf3126cde0c8a',1,'IProxy::update()'],['../class_proxy.html#a4973e0237c97126506d21d4d8903532e',1,'Proxy::update()'],['../class_matrix.html#a1528f402443d638620e56ebaffb1016e',1,'Matrix::update()']]]
 ];

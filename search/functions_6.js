@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['insert',['insert',['../class_data.html#a026da7d9c3e2647e8213a2db7ddb8113',1,'Data']]]
+  ['key_5ftype',['key_type',['../data__helpers_8h.html#a978800d2498641083008e02a0cbbf09f',1,'data_helpers.h']]]
 ];
