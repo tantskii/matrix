@@ -58,11 +58,11 @@ void Matrix<T, Default, N>::update(const Indexes<N>& indexes, const T& value) {
      
     const auto key = m_data.makeKey(indexes);
     const bool is_default = value == Default;
-    const bool exists     = m_data.contains(key);
+    const auto [exists, it] = m_data.contains(key);
 
     if (is_default && exists) {
         // п.1 Значение по умолчанию и элемент с такими индексами существует
-        m_data.erase(key);
+        m_data.erase(it);
     } else if (!is_default) {
         // п.3 & п.4 Пришло НЕ значение по умолчанию
         m_data.insert(key, value); // Data<T, N>::insert удалит старое значение,

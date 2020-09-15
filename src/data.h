@@ -41,17 +41,16 @@ public:
     
     void erase(const Key& key);                               ///< Удаляет элемент по ключу
     void insert(const Key& key, const T& elem);               ///< Добавляет элемент
-    bool contains(const Key& key) const;                      ///< Проверяет, есть ли элемент по переданному ключу
+    std::pair<bool, MapIt> contains(const Key& key) const;    ///< Проверяет, есть ли элемент по переданному ключу
     std::pair<FindStatus, T> find(const Key& key) const;      ///< Находит элемент по ключу
     size_t size() const;                                      ///< Возвращает количесвто хранимых элементов
     It begin();
     It end();
     Key makeKey(const Indexes<N>& indexes) const;             ///< Создает ключ
     Element makeElement(const Key& key, const T& elem) const; ///< Создает элемент
-private:
     void erase(MapIt it);          ///< Удаление по переданному итератору
+private:
     bool contains(MapIt it) const; ///< Проверяет, есть ли элемент по переданному итератору
-    
     std::list<Element> m_data; ///< Хранит последовательность из данных типа Element
     std::map<Key, It> m_map;   ///< Ключом явлется Key, а значение это итератор на элемент в m_data
 };
@@ -102,12 +101,13 @@ void Data<T, N>::insert(const Key& key, const T& val) {
 /*!
 Проверяет, существует ли элемент по переданному ключу
 @param key Ключ проверяемого элемента
-@return true если элемент по переданному ключу существует, false -- если нет
+@return std::pair из булевого значения (элемент найден/не найден) и итератора на std::map. В случае, когда элемент
+ не найден, итератор будет равен на end.
 */
 template <typename T, size_t N>
-bool Data<T, N>::contains(const Key& key) const {
+std::pair<bool, typename Data<T, N>::MapIt> Data<T, N>::contains(const Key& key) const {
     MapIt it = m_map.find(key);
-    return contains(it);
+    return {contains(it), it};
 }
 
 
