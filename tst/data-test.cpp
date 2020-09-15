@@ -34,7 +34,7 @@ TEST(Data, Insert) {
     
     auto key  = data.makeKey(indexes);
     data.insert(key, value);
-    const auto [status, value_1] = data.find(key);
+    const auto [status, value_1] = data.getElement(key);
     const auto [exists, it] = data.contains(key);
     
     ASSERT_TRUE(exists);
@@ -52,7 +52,7 @@ TEST(Data, InsertTwice) {
     data.insert(key, value_1);
     data.insert(key, value_2);
     
-    const auto [status, value_3] = data.find(key);
+    const auto [status, value_3] = data.getElement(key);
     const auto [exists, it] = data.contains(key);
     
     ASSERT_TRUE(exists);
@@ -86,7 +86,7 @@ TEST(Data, Erase) {
     auto key  = data.makeKey(indexes);
     data.insert(key, value);
     data.erase(key);
-    const auto [status, value_2] = data.find(key);
+    const auto [status, value_2] = data.getElement(key);
     const auto [exists, it] = data.contains(key);
     
     ASSERT_FALSE(exists);
@@ -113,8 +113,8 @@ TEST(Data, Find) {
     auto key_1 = data.makeKey(indexes_1);
     auto key_2 = data.makeKey(indexes_2);
     data.insert(key_1, value);
-    const auto [status_1, value_1] = data.find(key_1);
-    const auto [status_2, value_2] = data.find(key_2);
+    const auto [status_1, value_1] = data.getElement(key_1);
+    const auto [status_2, value_2] = data.getElement(key_2);
 
     ASSERT_EQ(value_1, value);
     ASSERT_EQ(value_2, 0);

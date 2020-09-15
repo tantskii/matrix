@@ -65,8 +65,8 @@ void Matrix<T, Default, N>::update(const Indexes<N>& indexes, const T& value) {
         m_data.erase(it);
     } else if (!is_default) {
         // п.3 & п.4 Пришло НЕ значение по умолчанию
-        m_data.insert(key, value); // Data<T, N>::insert удалит старое значение,
-                                   // в случае, когда элемент по такому ключу уже существует
+        m_data.insert(it, key, value); // Data<T, N>::insert удалит старое значение,
+                                       // в случае, когда элемент по такому ключу уже существует
     }
 }
 
@@ -86,7 +86,7 @@ T Matrix<T, Default, N>::get(const Indexes<N>& indexes) const {
      */
     
     const auto key  = m_data.makeKey(indexes);
-    const auto [status, elem] = m_data.find(key);
+    const auto [status, elem] = m_data.getElement(key);
     
     switch (status) {
         case Data<T, N>::FindStatus::FOUND:

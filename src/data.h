@@ -39,18 +39,27 @@ public:
     /// @brief сокращение для итератора в std::map<Key, It>
     using MapIt    = typename std::map<Key, It>::const_iterator;
     
-    void erase(const Key& key);                               ///< Удаляет элемент по ключу
-    void insert(const Key& key, const T& elem);               ///< Добавляет элемент
-    std::pair<bool, MapIt> contains(const Key& key) const;    ///< Проверяет, есть ли элемент по переданному ключу
-    std::pair<FindStatus, T> find(const Key& key) const;      ///< Находит элемент по ключу
-    size_t size() const;                                      ///< Возвращает количесвто хранимых элементов
-    It begin();
-    It end();
-    Key makeKey(const Indexes<N>& indexes) const;             ///< Создает ключ
-    Element makeElement(const Key& key, const T& elem) const; ///< Создает элемент
-    void erase(MapIt it);          ///< Удаление по переданному итератору
+    void erase(const Key& key);                                ///< Удаляет элемент по ключу
+    void erase(MapIt it);                                      ///< Удаление по переданному итератору
+    
+    void insert(const Key& key, const T& elem);                ///< Добавляет элемент по ключу
+    void insert(MapIt it, const Key& key, const T& elem);      ///< Добавляет элемент по итератору
+    
+    std::pair<bool, MapIt> contains(const Key& key) const;     ///< Проверяет, есть ли элемент по переданному ключу
+    bool contains(MapIt it) const;                             ///< Проверяет, есть ли элемент по переданному итератору
+    
+    std::pair<FindStatus, T> getElement(const Key& key) const; ///< Находит элемент по ключу
+    std::pair<FindStatus, T> getElement(MapIt it) const;       ///< Находит элемент по итератору
+    
+    size_t size() const;                                       ///< Возвращает количесвто хранимых элементов
+    
+    It begin();                                                ///< Возвращает итератор на начало
+    It end();                                                  ///< Возвращает итератор на конец
+    
+    Key makeKey(const Indexes<N>& indexes) const;              ///< Создает ключ
+    Element makeElement(const Key& key, const T& elem) const;  ///< Создает элемент
+    
 private:
-    bool contains(MapIt it) const; ///< Проверяет, есть ли элемент по переданному итератору
     std::list<Element> m_data; ///< Хранит последовательность из данных типа Element
     std::map<Key, It> m_map;   ///< Ключом явлется Key, а значение это итератор на элемент в m_data
 };
@@ -64,9 +73,6 @@ private:
 template <typename T, size_t N>
 void Data<T, N>::erase(const Key& key) {
     MapIt it = m_map.find(key);
-    if (!contains(it)) {
-        throw std::runtime_error("Try to erase element by key which was not created");
-    }
     erase(it);
 }
 
@@ -77,19 +83,34 @@ void Data<T, N>::erase(const Key& key) {
 */
 template <typename T, size_t N>
 void Data<T, N>::erase(MapIt it) {
+    if (!contains(it)) {
+        throw std::runtime_error("Try to erase element by key which was not created");
+    }
     m_data.erase(it->second);
     m_map.erase(it);
 }
 
 
 /*!
-Добавляет элемент. В случае, когда элемент с таким ключом существует, предыдущее значение удаляется.
-@param key Ключ проверяемого элемент
+Добавляет элемент по ключу. В случае, когда элемент с таким ключом существует, предыдущее значение удаляется.
+@param key Ключ для элемента
 @param val Хранимое значение
 */
 template <typename T, size_t N>
 void Data<T, N>::insert(const Key& key, const T& val) {
     MapIt it = m_map.find(key);
+    insert(it, key, val);
+}
+
+
+/*!
+Добавляет элемент по итератору. В случае, когда элемент с таким итератором существует, предыдущее значение удаляется.
+@param it  Итератор на элемент
+@param key Ключ для элемента
+@param val Хранимое значение
+*/
+template <typename T, size_t N>
+void Data<T, N>::insert(MapIt it, const Key& key, const T& val) {
     if (contains(it)) {
         erase(it);
     }
@@ -129,8 +150,20 @@ bool Data<T, N>::contains(MapIt it) const {
  возвращается пара FindStatus::FOUND и значение типа T
 */
 template <typename T, size_t N>
-std::pair<typename Data<T, N>::FindStatus, T> Data<T, N>::find(const Key& key) const {
+std::pair<typename Data<T, N>::FindStatus, T> Data<T, N>::getElement(const Key& key) const {
     MapIt it = m_map.find(key);
+    return getElement(it);
+}
+
+
+/*!
+Осуществляет поиск элемента по итератору
+@param it Итератор на искомый элемент
+@return Если элемента нет, то пару FindStatus::NOT_FOUND и значение типа T по умолчанию. В противном случае
+ возвращается пара FindStatus::FOUND и значение типа T
+*/
+template <typename T, size_t N>
+std::pair<typename Data<T, N>::FindStatus, T> Data<T, N>::getElement(MapIt it) const {
     if (!contains(it)) {
         return {FindStatus::NOT_FOUND, T{}};
     }
